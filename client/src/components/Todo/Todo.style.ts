@@ -29,6 +29,10 @@ export const TodoItemTitle = styled.div`
     overflow: auto;
     height: 90px;
     margin-right: 6px;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 `
 
 export const TodoItemTitleTextArea = styled.textarea`

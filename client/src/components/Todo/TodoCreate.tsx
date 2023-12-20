@@ -1,12 +1,12 @@
 import {TodoItemButtons, TodoItemTitleTextArea, TodoItemWrapper} from "./Todo.style.ts";
 import {Button} from "../Button/Button.tsx";
 import add from "../../assets/add.svg";
-import {useState} from "react";
+import {memo, useState} from "react";
 import {AppDispatch} from "../../store";
 import {useDispatch} from "react-redux";
 import {createTodo} from "../../store/state";
 
-export const TodoCreate = () => {
+export const TodoCreate = memo(() => {
     const [title, setTitle] = useState("")
     const dispatch = useDispatch<AppDispatch>()
 
@@ -43,4 +43,4 @@ export const TodoCreate = () => {
             </TodoItemButtons>
         </TodoItemWrapper>
     )
-}
+})

@@ -4,7 +4,7 @@ import done from "../../assets/done.svg"
 import edit from "../../assets/edit.svg"
 import close from "../../assets/close.svg"
 import save from "../../assets/save.svg"
-import React, {useState} from "react";
+import React, {memo, useState} from "react";
 import {ITodo, removeTodo, updateTodo} from "../../store/state";
 import {useDispatch} from "react-redux";
 import {AppDispatch} from "../../store";
@@ -13,7 +13,7 @@ interface TodoProps {
     todoData: ITodo
 }
 
-export const Todo: React.FC<TodoProps> = ({todoData}) => {
+export const Todo: React.FC<TodoProps> = memo(({todoData}) => {
     const [isRedact, setIsRedact] = useState(false)
     const [item, setItem] = useState(todoData)
     const dispatch = useDispatch<AppDispatch>()
@@ -101,4 +101,4 @@ export const Todo: React.FC<TodoProps> = ({todoData}) => {
             </TodoItemButtons>
         </TodoItemWrapper>
     )
-}
+})
